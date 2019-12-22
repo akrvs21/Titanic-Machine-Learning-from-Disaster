@@ -206,7 +206,7 @@ For this lab, I used 5 popular classifiers:
 
    **where** 
 
-   ​	   P(H) is the probability of hypothesis H being true. This is known as the prior probability.
+   P(H) is the probability of hypothesis H being true. This is known as the prior probability.
 
    P(E) is the probability of the evidence(regardless of the hypothesis).
 
@@ -231,7 +231,7 @@ For this lab, I used 5 popular classifiers:
 
    
 
-   5. “Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.  However, it is mostly used in classification problems. In this  algorithm, we plot each data item as a point in n-dimensional space  (where n is number of features you have) with the value of each feature  being the value of a particular coordinate. Then, we perform  classification by finding the hyper-plane that differentiate the two  classes very well (look at the below snapshot).
+5. “Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.  However, it is mostly used in classification problems. In this  algorithm, we plot each data item as a point in n-dimensional space  (where n is number of features you have) with the value of each feature  being the value of a particular coordinate. Then, we perform  classification by finding the hyper-plane that differentiate the two  classes very well (look at the below snapshot).
 
    [![SVM_1](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)
 
