@@ -184,75 +184,76 @@ For this lab, I used 5 popular classifiers:
 
    n_splits = 10, so we divide the train data into 10 fold, first 9 folds has 89 rows and last fold has 90 row. Then validate 10 rounds, different fold for each round. After finishing a round, average accuracy and pick the best accuracy model for this test. Others are similar. 
 
-   2. Decision Tree - *A decision tree is drawn upside down with its root at the top.* In the image below, the bold text in black represents a condition/**internal node**, based on which the tree splits into branches/ **edges**. The end of the branch that doesn’t split anymore is the decision/**leaf**, in this case, whether the passenger died or survived, represented as red and green text respectively. This is very basic illustration for demonstration purpose and doesn't represent all the actual features. 
+2. Decision Tree - *A decision tree is drawn upside down with its root at the top.* In the image below, the bold text in black represents a condition/**internal node**, based on which the tree splits into branches/ **edges**. The end of the branch that doesn’t split anymore is the decision/**leaf**, in this case, whether the passenger died or survived, represented as red and green text respectively. This is very basic illustration for demonstration purpose and doesn't represent all the actual features. 
 
-      
-
-      ![image-20191221183506185](img\image-20191221183506185.png)
-
-      ![image-20191221183635562](img\image-20191221183635562.png)
-
-      3. Random Forest Tree -  Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction (see figure below).
    
-         ![image-20191222150540736](img\image-20191222150540736.png)
-      
-         
-      
-         4. Naive Bayes algorithm - to understand the Naive Bayes classifier we need to understand the Bayes theorem. So let’s first discuss the Bayes Theorem. Bayes theorem named after Rev. Thomas Bayes. It works on conditional **probability**. Conditional probability is the probability that something will happen, ***given that something else\* has already occurred**. Using the conditional probability, we can calculate the probability of an event using its prior knowledge.
-      
-         Below is the formula for calculating the conditional probability.
-      
-         ![\textrm{P(H \textbar E) = }  \frac{\textrm{ P(E \textbar H) * P(H)}} {\textrm{P(E)}}](https://s0.wp.com/latex.php?latex=%5Ctextrm%7BP%28H+%5Ctextbar+E%29+%3D+%7D+%C2%A0%5Cfrac%7B%5Ctextrm%7B+P%28E+%5Ctextbar+H%29+%2A+P%28H%29%7D%7D+%7B%5Ctextrm%7BP%28E%29%7D%7D&bg=ffffff&fg=000&s=0)
-      
-         **where** 
-      
-         - P(H) is the probability of hypothesis H being true. This is known as the prior probability.
-      
-         - P(E) is the probability of the evidence(regardless of the hypothesis).
-      
-         - P(E|H) is the probability of the evidence given that hypothesis is true.
-      
-         - P(H|E) is the probability of the hypothesis given that the evidence is there. 
-      
-           Naive Bayes is a kind of classifier  which uses the Bayes Theorem. It predicts membership probabilities for  each class such as the probability that given record or data point  belongs to a particular class.  The class with the highest probability  is considered as the most likely class. This is also known as **Maximum A Posteriori (MAP)**.
-      
-           #### The MAP for a hypothesis is:
-      
-           **MAP(H)**
-            = max( P(H|E) )
-            =  max( (P(E|H)*P(H))/P(E))
-            = max(P(E|H)*P(H))
-      
-           P(E) is evidence probability, and it is used to normalize the result. It remains same so, removing it won’t affect.
-      
-           Naive Bayes classifier assumes that all the features are **unrelated** to each other. Presence or absence of a feature does not influence the  presence or absence of any other feature. We can use Wikipedia example  for explaining the logic i.e. 
-      
-           ![image-20191222152043780](img\image-20191222152043780.png)
-      
-           5. “Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.  However, it is mostly used in classification problems. In this  algorithm, we plot each data item as a point in n-dimensional space  (where n is number of features you have) with the value of each feature  being the value of a particular coordinate. Then, we perform  classification by finding the hyper-plane that differentiate the two  classes very well (look at the below snapshot).
-      
-              [![SVM_1](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)
-      
-              ![image-20191222153630503](img\image-20191222153630503.png)
-      
-              ![image-20191222153653365](img\image-20191222153653365.png)
-      
-              Since `SVM` has the best accuracy so I used it for testing. 
-      
-              ![image-20191222155256532](img\image-20191222155256532.png)
-      
-              Then generated new csv file and summited it on `Kaggle` platform.  
-      
-              
-      
-              Submission Result 
-      
-              ![image-20191222155853677](img\image-20191222155853677.png)
-      
-              
-      
-              
-      
+
+   ![image-20191221183506185](img\image-20191221183506185.png)
+
+   ![image-20191221183635562](img\image-20191221183635562.png)
+
+3. Random Forest Tree -  Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction (see figure below).
+
+   ![image-20191222150540736](img\image-20191222150540736.png)
+
+   
+
+4. Naive Bayes algorithm - to understand the Naive Bayes classifier we need to understand the Bayes theorem. So let’s first discuss the Bayes Theorem. Bayes theorem named after Rev. Thomas Bayes. It works on conditional **probability**. Conditional probability is the probability that something will happen, ***given that something else\* has already occurred**. Using the conditional probability, we can calculate the probability of an event using its prior knowledge.
+
+   Below is the formula for calculating the conditional probability.
+
+   ![\textrm{P(H \textbar E) = }  \frac{\textrm{ P(E \textbar H) * P(H)}} {\textrm{P(E)}}](https://s0.wp.com/latex.php?latex=%5Ctextrm%7BP%28H+%5Ctextbar+E%29+%3D+%7D+%C2%A0%5Cfrac%7B%5Ctextrm%7B+P%28E+%5Ctextbar+H%29+%2A+P%28H%29%7D%7D+%7B%5Ctextrm%7BP%28E%29%7D%7D&bg=ffffff&fg=000&s=0)
+
+   **where** 
+
+   ​	   P(H) is the probability of hypothesis H being true. This is known as the prior probability.
+
+   P(E) is the probability of the evidence(regardless of the hypothesis).
+
+   P(E|H) is the probability of the evidence given that hypothesis is true.
+
+   P(H|E) is the probability of the hypothesis given that the evidence is there. 
+
+   Naive Bayes is a kind of classifier  which uses the Bayes Theorem. It predicts membership probabilities for  each class such as the probability that given record or data point  belongs to a particular class.  The class with the highest probability  is considered as the most likely class. This is also known as **Maximum A Posteriori (MAP)**.
+
+   #### The MAP for a hypothesis is:
+
+   **MAP(H)**
+    = max( P(H|E) )
+    =  max( (P(E|H)*P(H))/P(E))
+    = max(P(E|H)*P(H))
+
+   P(E) is evidence probability, and it is used to normalize the result. It remains same so, removing it won’t affect.
+
+   Naive Bayes classifier assumes that all the features are **unrelated** to each other. Presence or absence of a feature does not influence the  presence or absence of any other feature. 
+
+   ![image-20191222152043780](img\image-20191222152043780.png)
+
+   
+
+   5. “Support Vector Machine” (SVM) is a supervised machine learning algorithm which can be used for both classification or regression challenges.  However, it is mostly used in classification problems. In this  algorithm, we plot each data item as a point in n-dimensional space  (where n is number of features you have) with the value of each feature  being the value of a particular coordinate. Then, we perform  classification by finding the hyper-plane that differentiate the two  classes very well (look at the below snapshot).
+
+   [![SVM_1](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)
+
+   ![image-20191222153630503](img\image-20191222153630503.png)
+
+   ![image-20191222153653365](img\image-20191222153653365.png)
+
+   Since `SVM` has the best accuracy so I used it for testing. 
+
+   ![image-20191222155256532](img\image-20191222155256532.png)
+
+   Then generated new csv file and summited it on `Kaggle` platform.  
+
+   
+
+   Submission Result 
+
+   ![image-20191222155853677](img\image-20191222155853677.png)
+
+   
+
+   
 
 
 
