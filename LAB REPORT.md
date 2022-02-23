@@ -235,7 +235,7 @@ For this lab, I used 5 popular classifiers:
 
    [![SVM_1](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)](https://www.analyticsvidhya.com/wp-content/uploads/2015/10/SVM_1.png)
 
-   ![image-20191222153630503](img\image-20191222153630503.png)
+   ![image-20191222153630503](img/image-20191222153630503.png)
 
    ![image-20191222153653365](img\image-20191222153653365.png)
 
