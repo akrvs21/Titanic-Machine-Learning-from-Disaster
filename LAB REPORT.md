@@ -10,13 +10,13 @@ Pandas introduction:
 
 In computer programming, **pandas** is a software library written for the Python programming language for data manipulation and analysis. In  particular, it offers data structures and operations for manipulating  numerical tables and time series.
 
-![image-20191221151030010](\img\image-20191221151030010.png)
+![image-20191221151030010](img/image-20191221151030010.png)
 
 Above import Pandas and create a data frames for train and test so we can visualize them using Pandas.  
 
 
 
-![image-20191221153212483](img\image-20191221153212483.png) 
+![image-20191221153212483](img/image-20191221153212483.png) 
 
 With `train.head()` we can retrieve all the features that we have in our `train.csv` file. I will clarify some of them here:  
 
@@ -34,19 +34,19 @@ We can see that some values have `NaN`, which stands for `"Not a number"`. We ca
 
 
 
-![image-20191221155215781](img\image-20191221155215781.png) 
+![image-20191221155215781](img/image-20191221155215781.png) 
 
  **PANDAS** allow us to see that `train.csv` has passengers and 12 features and `test.csv` has 11 features, it doesn't have the Survived column.
 
   
 
-![image-20191221155748531](img\image-20191221155748531.png)
+![image-20191221155748531](img/image-20191221155748531.png)
 
 Here we can see that number of passengers is 891 and number of Age is 714 so we definitely have some missing values in Age. 
 
 
 
-![image-20191221160516985](img\image-20191221160516985.png)
+![image-20191221160516985](img/image-20191221160516985.png)
 
 Similar for test.csv
 
@@ -54,25 +54,25 @@ Similar for test.csv
 
 To visualize the data, I use `seaborn` for categorical features. 
 
-![image-20191221160946969](img\image-20191221160946969.png)
+![image-20191221160946969](img/image-20191221160946969.png)
 
 Above is the function for the chart. Is a get one feature as a parameter and going to give two bar charts, one is for "Survived" another for "Dead". 
 
 
 
-![image-20191221161331641](img\image-20191221161331641.png)
+![image-20191221161331641](img/image-20191221161331641.png)
 
 As we can see the chart, the females (blue) survived most and male less. 
 
 
 
-![image-20191221161513852](img\image-20191221161513852.png)
+![image-20191221161513852](img/image-20191221161513852.png)
 
 And here we can see that people from economic class(3d class or green) died more than the First class passengers (blue). 
 
 
 
-![image-20191221161749799](img\image-20191221161749799.png)
+![image-20191221161749799](img/image-20191221161749799.png)
 
 Here we observe that if a passenger were alone, without siblings and a spouse, he more likely to die. 
 
@@ -84,7 +84,7 @@ In this part we are going to do some `feature engineering` to fill up the missin
 
 Combine train and  test dataset  and extract only the title from the Name field 
 
-![image-20191221165549404](img\image-20191221165549404.png)
+![image-20191221165549404](img/image-20191221165549404.png)
 
 Extracted above titles and  combine them as follows: 
 
@@ -98,37 +98,37 @@ Extracted above titles and  combine them as follows:
 
 And use mapping to change these title as a numeric value (0, 1, 2, 3)
 
-![image-20191221165933086](img\image-20191221165933086.png)
+![image-20191221165933086](img/image-20191221165933086.png)
 
-![image-20191221170152134](img\image-20191221170152134.png)
+![image-20191221170152134](img/image-20191221170152134.png)
 
 Now we have new column Title.  I won't show for test dataset but it's same, because I did combine them. 
 
 
 
-![image-20191221170357427](img\image-20191221170357427.png)
+![image-20191221170357427](img/image-20191221170357427.png)
 
 From out chart we can see that `Mr` less survived than `Miss` or `Mrs`. Similar picture we saw  for `Sex` comparison.
 
 Then I drop the `Name` field from datasets
 
-![image-20191221170637470](img\image-20191221170637470.png)
+![image-20191221170637470](img/image-20191221170637470.png)
 
 
 
 And change the text to numeric values , 0 for **male** and 1 for  **female**
 
-![image-20191221170726345](img\image-20191221170726345.png)
+![image-20191221170726345](img/image-20191221170726345.png)
 
 
 
 And the last we have to fill the missing fields in Age. The technique is to get medium value of the Title's age, instead of using the average age of the whole Titanic passengers. 
 
-![image-20191221171459867](img\image-20191221171459867.png)
+![image-20191221171459867](img/image-20191221171459867.png)
 
 and if we draw the chart, we can see that approximately 17 or 18 years old passengers have a high chance to survive
 
-![image-20191221171829200](img\image-20191221171829200.png)
+![image-20191221171829200](img/image-20191221171829200.png)
 
 and 25 year old above have a high chance to die. 
 
@@ -136,35 +136,35 @@ and 25 year old above have a high chance to die.
 
 We can get a closer look in some range of age with `xlim`.
 
-![image-20191221172217193](img\image-20191221172217193.png)
+![image-20191221172217193](img/image-20191221172217193.png)
 
 Below I do the binning, or converting numerical age to categorical variables. Because we have a lot of passengers and all of them have different age, it's hard to see in chart all that information. So we divide into some categories, such as: child = 0, young = 1, adult = 2, mid-age = 3, old  = 4
 
-![image-20191221172639556](img\image-20191221172639556.png)
+![image-20191221172639556](img/image-20191221172639556.png)
 
-![image-20191221173429948](img\image-20191221173429948.png)
+![image-20191221173429948](img/image-20191221173429948.png)
 
 For Embarked feature I'm filling with S value because as we can observe it's the most from our chart. 
 
-![image-20191221173754819](img\image-20191221173754819.png)
+![image-20191221173754819](img/image-20191221173754819.png)
 
 The `Fare` also has some missing values. So we have to fill them. Because the `Fare` feature is very related to `Pclass` so I'm going to find the median value of a `Pclass` and fill out the missing value for `Fare`. 
 
-![image-20191221174258985](img\image-20191221174258985.png)
+![image-20191221174258985](img/image-20191221174258985.png)
 
 And similar to age technique do the binning :
 
-![image-20191221174408754](img\image-20191221174408754.png)
+![image-20191221174408754](img/image-20191221174408754.png)
 
 And again if the passenger is alone there is a high chance to die, and if he/she has sibling  or spouse etc. there is  higher chance to survive 
 
-![image-20191221174832354](img\image-20191221174832354.png)
+![image-20191221174832354](img/image-20191221174832354.png)
 
 This code is mapping the family size with some numeric value for simplicity 
 
-![image-20191221175056191](img\image-20191221175056191.png)
+![image-20191221175056191](img/image-20191221175056191.png)
 
-![image-20191221175232993](img\image-20191221175232993.png)
+![image-20191221175232993](img/image-20191221175232993.png)
 
 Above I drop the ticket information, because it's pretty useless. And `SibSp` and `Parch` feature because I did combine them in `FamilySize` field. 
 
@@ -174,13 +174,13 @@ In this section, I will build `Multiple classifier` to predict Titanic test data
 
 Modeling
 
-![image-20191221183009444](img\image-20191221183009444.png)
+![image-20191221183009444](img/image-20191221183009444.png)
 
 For this lab, I used 5 popular classifiers:
 
 1. kNN algorithm - a type of **supervised machine learning** algorithm. The KNN algorithm assumes that similar things exist in close proximity. In other words, similar things are near to each other.
 
-   ![image-20191221183057243](img\image-20191221183057243.png)
+   ![image-20191221183057243](img/image-20191221183057243.png)
 
    n_splits = 10, so we divide the train data into 10 fold, first 9 folds has 89 rows and last fold has 90 row. Then validate 10 rounds, different fold for each round. After finishing a round, average accuracy and pick the best accuracy model for this test. Others are similar. 
 
@@ -188,13 +188,13 @@ For this lab, I used 5 popular classifiers:
 
    
 
-   ![image-20191221183506185](img\image-20191221183506185.png)
+   ![image-20191221183506185](img/image-20191221183506185.png)
 
-   ![image-20191221183635562](img\image-20191221183635562.png)
+   ![image-20191221183635562](img/image-20191221183635562.png)
 
 3. Random Forest Tree -  Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction (see figure below).
 
-   ![image-20191222150540736](img\image-20191222150540736.png)
+   ![image-20191222150540736](img/image-20191222150540736.png)
 
    
 
@@ -227,7 +227,7 @@ For this lab, I used 5 popular classifiers:
 
    Naive Bayes classifier assumes that all the features are **unrelated** to each other. Presence or absence of a feature does not influence the  presence or absence of any other feature. 
 
-   ![image-20191222152043780](img\image-20191222152043780.png)
+   ![image-20191222152043780](img/image-20191222152043780.png)
 
    
 
@@ -237,11 +237,11 @@ For this lab, I used 5 popular classifiers:
 
    ![image-20191222153630503](img/image-20191222153630503.png)
 
-   ![image-20191222153653365](img\image-20191222153653365.png)
+   ![image-20191222153653365](img/image-20191222153653365.png)
 
    Since `SVM` has the best accuracy so I used it for testing. 
 
-   ![image-20191222155256532](img\image-20191222155256532.png)
+   ![image-20191222155256532](img/image-20191222155256532.png)
 
    Then generated new csv file and summited it on `Kaggle` platform.  
 
@@ -249,7 +249,7 @@ For this lab, I used 5 popular classifiers:
 
    Submission Result 
 
-   ![image-20191222155853677](img\image-20191222155853677.png)
+   ![image-20191222155853677](img/image-20191222155853677.png)
 
    
 
